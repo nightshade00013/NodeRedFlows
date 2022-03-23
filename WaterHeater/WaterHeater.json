@@ -1,0 +1,957 @@
+[
+    {
+        "id": "9c0caee02ecfbf11",
+        "type": "tab",
+        "label": "Water heater control",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c333722fa309a7ad",
+        "type": "api-call-service",
+        "z": "9c0caee02ecfbf11",
+        "name": "Waterheater Off",
+        "server": "c20683a8.b27ab",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [
+            "e37b9b3643bf775f81b763ade2056411"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1300,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "41194fd01a4a6da2",
+        "type": "api-call-service",
+        "z": "9c0caee02ecfbf11",
+        "name": "Waterheater On",
+        "server": "c20683a8.b27ab",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "e37b9b3643bf775f81b763ade2056411"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1300,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c8671626ef16494e",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Waterheater Top Temp",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "107",
+        "halt_if_type": "num",
+        "halt_if_compare": "lte",
+        "entity_id": "sensor.temperature_1",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 920,
+        "y": 40,
+        "wires": [
+            [
+                "41194fd01a4a6da2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ce6f11d7acd1e5b8",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Waterheater Top Temp",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "112",
+        "halt_if_type": "num",
+        "halt_if_compare": "gte",
+        "entity_id": "sensor.temperature_1",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 920,
+        "y": 220,
+        "wires": [
+            [
+                "2ca231019f826741"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "714d2b277dd4227c",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Waterheater Bottom Temp",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "107",
+        "halt_if_type": "num",
+        "halt_if_compare": "lte",
+        "entity_id": "sensor.temperature_2",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 930,
+        "y": 120,
+        "wires": [
+            [
+                "41194fd01a4a6da2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2ca231019f826741",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Waterheater Bottom Temp",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "112",
+        "halt_if_type": "num",
+        "halt_if_compare": "gte",
+        "entity_id": "sensor.temperature_2",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 930,
+        "y": 300,
+        "wires": [
+            [
+                "c333722fa309a7ad"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c12db0ba826d6ad2",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Home?",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "person.1",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "279d1a22b64318d4"
+            ],
+            [
+                "78ffce16f4f9df85",
+                "50152f200572c382",
+                "97ba55c43e838b37"
+            ]
+        ]
+    },
+    {
+        "id": "78ffce16f4f9df85",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Waterheater Top Temp",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "93",
+        "halt_if_type": "num",
+        "halt_if_compare": "lte",
+        "entity_id": "sensor.temperature_1",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 920,
+        "y": 400,
+        "wires": [
+            [
+                "41194fd01a4a6da2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "97ba55c43e838b37",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Waterheater Top Temp",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "97",
+        "halt_if_type": "num",
+        "halt_if_compare": "gte",
+        "entity_id": "sensor.temperature_1",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 920,
+        "y": 580,
+        "wires": [
+            [
+                "db2de3852eb99d60"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "50152f200572c382",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Waterheater Bottom Temp",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "93",
+        "halt_if_type": "num",
+        "halt_if_compare": "lte",
+        "entity_id": "sensor.temperature_2",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 930,
+        "y": 480,
+        "wires": [
+            [
+                "41194fd01a4a6da2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "db2de3852eb99d60",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Waterheater Bottom Temp",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "97",
+        "halt_if_type": "num",
+        "halt_if_compare": "gte",
+        "entity_id": "sensor.temperature_2",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 930,
+        "y": 660,
+        "wires": [
+            [
+                "c333722fa309a7ad"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8d30f955fd79d7dd",
+        "type": "switch",
+        "z": "9c0caee02ecfbf11",
+        "name": "On or Off?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "d2023c74b6cd6641"
+            ],
+            [
+                "b7db4fe4d3c2f9d9"
+            ]
+        ]
+    },
+    {
+        "id": "58f8b231ad9fbb18",
+        "type": "inject",
+        "z": "9c0caee02ecfbf11",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "sync",
+        "payload": "sync",
+        "payloadType": "str",
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "9e6a975ed60efdc5"
+            ]
+        ]
+    },
+    {
+        "id": "e5518b175c1c519a",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Home?",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "person.2",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 390,
+        "y": 200,
+        "wires": [
+            [
+                "279d1a22b64318d4"
+            ],
+            [
+                "78ffce16f4f9df85",
+                "50152f200572c382",
+                "97ba55c43e838b37"
+            ]
+        ]
+    },
+    {
+        "id": "c28452c9f4d20fd5",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Home?",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "person.3",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "279d1a22b64318d4"
+            ],
+            [
+                "78ffce16f4f9df85",
+                "50152f200572c382",
+                "97ba55c43e838b37"
+            ]
+        ]
+    },
+    {
+        "id": "279d1a22b64318d4",
+        "type": "delay",
+        "z": "9c0caee02ecfbf11",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 580,
+        "y": 120,
+        "wires": [
+            [
+                "c8671626ef16494e",
+                "714d2b277dd4227c",
+                "ce6f11d7acd1e5b8"
+            ]
+        ]
+    },
+    {
+        "id": "d971ed571ff22773",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Guests?",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.guest_at_home",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 400,
+        "y": 80,
+        "wires": [
+            [
+                "279d1a22b64318d4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b7db4fe4d3c2f9d9",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Keep Water Hot?",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.keep_water_hot",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 370,
+        "y": 460,
+        "wires": [
+            [
+                "41194fd01a4a6da2"
+            ],
+            [
+                "78ffce16f4f9df85",
+                "50152f200572c382",
+                "97ba55c43e838b37"
+            ]
+        ]
+    },
+    {
+        "id": "d2023c74b6cd6641",
+        "type": "api-current-state",
+        "z": "9c0caee02ecfbf11",
+        "name": "Keep Water Hot?",
+        "server": "c20683a8.b27ab",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.keep_water_hot",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 370,
+        "y": 380,
+        "wires": [
+            [
+                "41194fd01a4a6da2"
+            ],
+            [
+                "c12db0ba826d6ad2",
+                "e5518b175c1c519a",
+                "c28452c9f4d20fd5",
+                "d971ed571ff22773"
+            ]
+        ]
+    },
+    {
+        "id": "48532617dfec355a",
+        "type": "comment",
+        "z": "9c0caee02ecfbf11",
+        "name": "Keep the water heater hot is a Helper in HA",
+        "info": "If expected use will be high or you need to keep the water extra hot you can set your water heater thermostat to a level that is your MAX temp but still safe.  This can be used to help sanitize water during a boil water emergency.  Most bacteria break down over 140 degrees F.",
+        "x": 360,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "b953eaa5ebb7acad",
+        "type": "comment",
+        "z": "9c0caee02ecfbf11",
+        "name": "Check to see if household members are home or a guest is home.",
+        "info": "",
+        "x": 330,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f463aa1018198b09",
+        "type": "comment",
+        "z": "9c0caee02ecfbf11",
+        "name": "Delay for if someone is not home.",
+        "info": "If any named persons are not home the schedule will trigger the lower temperature so there is a delay to override the upper temp so that if even one person (or guest) is home the water will stay in the higher temperature range.",
+        "x": 650,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "8e1386abedf4a3b9",
+        "type": "comment",
+        "z": "9c0caee02ecfbf11",
+        "name": "Timer for determining night or day schedule",
+        "info": "",
+        "x": 180,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b6218d6d7be606ac",
+        "type": "comment",
+        "z": "9c0caee02ecfbf11",
+        "name": "Temperature Information",
+        "info": "Either the top or bottom temperature can be used to trigger an on event but both must be a certain temperature to trigger an off event.",
+        "x": 1230,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4db33b85fc6b45d4",
+        "type": "comment",
+        "z": "9c0caee02ecfbf11",
+        "name": "Time of day based temps info",
+        "info": "If users are home then the temperature will be kept at a higher range unless it is night time (default set from 22:15 to 7:45) or if all users or guests are marked as away.  Then the lower temperature settings go into effect to allow the temperature to drop a little overnight.",
+        "x": 1280,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "9e6a975ed60efdc5",
+        "type": "bigtimer",
+        "z": "9c0caee02ecfbf11",
+        "outtopic": "",
+        "outpayload1": "1",
+        "outpayload2": "0",
+        "name": "Big Timer",
+        "comment": "",
+        "lat": 0,
+        "lon": 0,
+        "starttime": "465",
+        "endtime": "1335",
+        "starttime2": 0,
+        "endtime2": 0,
+        "startoff": 0,
+        "endoff": 0,
+        "startoff2": 0,
+        "endoff2": 0,
+        "offs": 0,
+        "outtext1": "",
+        "outtext2": "",
+        "timeout": 1440,
+        "sun": true,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "jan": true,
+        "feb": true,
+        "mar": true,
+        "apr": true,
+        "may": true,
+        "jun": true,
+        "jul": true,
+        "aug": true,
+        "sep": true,
+        "oct": true,
+        "nov": true,
+        "dec": true,
+        "day1": 0,
+        "month1": 0,
+        "day2": 0,
+        "month2": 0,
+        "day3": 0,
+        "month3": 0,
+        "day4": 0,
+        "month4": 0,
+        "day5": 0,
+        "month5": 0,
+        "day6": 0,
+        "month6": 0,
+        "day7": 0,
+        "month7": 0,
+        "day8": 0,
+        "month8": 0,
+        "day9": 0,
+        "month9": 0,
+        "day10": 0,
+        "month10": 0,
+        "day11": 0,
+        "month11": 0,
+        "day12": 0,
+        "month12": 0,
+        "d1": 0,
+        "w1": 0,
+        "d2": 0,
+        "w2": 0,
+        "d3": 0,
+        "w3": 0,
+        "d4": 0,
+        "w4": 0,
+        "d5": 0,
+        "w5": 0,
+        "d6": 0,
+        "w6": 0,
+        "xday1": 0,
+        "xmonth1": 0,
+        "xday2": 0,
+        "xmonth2": 0,
+        "xday3": 0,
+        "xmonth3": 0,
+        "xday4": 0,
+        "xmonth4": 0,
+        "xday5": 0,
+        "xmonth5": 0,
+        "xday6": 0,
+        "xmonth6": 0,
+        "xday7": 0,
+        "xmonth7": 0,
+        "xday8": 0,
+        "xmonth8": 0,
+        "xday9": 0,
+        "xmonth9": 0,
+        "xday10": 0,
+        "xmonth10": 0,
+        "xday11": 0,
+        "xmonth11": 0,
+        "xday12": 0,
+        "xmonth12": 0,
+        "xd1": 0,
+        "xw1": 0,
+        "xd2": 0,
+        "xw2": 0,
+        "xd3": 0,
+        "xw3": 0,
+        "xd4": 0,
+        "xw4": 0,
+        "xd5": 0,
+        "xw5": 0,
+        "xd6": 0,
+        "xw6": 0,
+        "suspend": false,
+        "random": false,
+        "randon1": false,
+        "randoff1": false,
+        "randon2": false,
+        "randoff2": false,
+        "repeat": true,
+        "atstart": true,
+        "odd": false,
+        "even": false,
+        "x": 120,
+        "y": 200,
+        "wires": [
+            [],
+            [
+                "8d30f955fd79d7dd"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c20683a8.b27ab",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 2,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": false,
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": "30"
+    }
+]
